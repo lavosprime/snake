@@ -1,7 +1,7 @@
 CXXFLAGS = -g -o0 -Wall -Werror -Wpedantic -std=c++11
 LDFLAGS = -lncurses
 
-OBJS = Main.cc
+OBJS = Main.o
 
 HEADERS =
 
