@@ -10,21 +10,23 @@
 #include <cstdlib>
 #include <ncurses.h>
 
-void initView(void) {
+#include "View.h"
+
+void View::init(void) {
   initscr();
   raw();
   noecho();
   curs_set(0);
 }
 
-void endView(void) {
+void View::end(void) {
   endwin();
 }
 
-void erase(x, y) {
+void View::erase(int x, int y) {
   draw(x, y, ' ');
 }
 
-void draw(x, y, ch) {
+void View::draw(int x, int y, char ch) {
   mvaddch(y, x, ch);
 }
