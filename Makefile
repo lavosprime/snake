@@ -1,14 +1,15 @@
-CXXFLAGS = -g -o0 -Wall -Werror -Wpedantic -std=c++11
+CXXFLAGS = -g -O0 -Wall -Werror -Wpedantic -std=c++11
 LDFLAGS = -lncurses
+PROJ = snake
 
 OBJS = Main.o View.o
 
-HEADERS =
+HEADERS = View.h
 
-all: snake
+all: $(PROJ)
 
-snake: $(OBJS) $(HEADERS)
-	$(CXX) $(CXXFLAGS) -o snake $(OBJS) $(LDFLAGS)
+$(PROJ): $(OBJS) $(HEADERS)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(LDFLAGS)
 
 %.o: %.cc $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $<
