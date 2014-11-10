@@ -8,8 +8,11 @@
 *******************************************************************************/
 
 #include <cstdlib>
-#include <ncurses.h>
+
+#include "View.h"
 
 int main(void) {
+  View::init();
+  View::end();
   return 0;
 }
