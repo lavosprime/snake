@@ -14,6 +14,8 @@ class View {
  public:
   static void init(void);
   static void end(void);
+  static void newFrame(void);
+  static int frameCount(void);
   static void erase(int x, int y);
   static void draw(int x, int y, char ch);
 };

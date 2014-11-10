@@ -12,6 +12,8 @@
 
 #include "View.h"
 
+static int frameCount = 0;
+
 void View::init(void) {
   initscr();
   raw();
@@ -21,6 +23,15 @@ void View::init(void) {
 
 void View::end(void) {
   endwin();
+}
+
+void View::newFrame(void) {
+  refresh();
+  frameCount++;
+}
+
+int View::frameCount(void) {
+  return frameCount;
 }
 
 void View::erase(int x, int y) {
