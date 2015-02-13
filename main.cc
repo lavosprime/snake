@@ -9,7 +9,7 @@
 
 #include <cstdlib>
 
-#include "view.h"
+#include "./view.h"
 
 int main(void) {
   View::init();

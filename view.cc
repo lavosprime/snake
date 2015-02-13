@@ -7,14 +7,13 @@
 
 \******************************************************************************/
 
-#include <cstdlib>
-#include <ncurses.h>
+#include "./view.h"
 
-#include "view.h"
+#include <atomic>
 
 namespace {
 
-int frameCount = 0;
+std::atomic_uintmax_t frame_count;
 
 }
 
@@ -23,6 +22,7 @@ void View::init(void) {
   raw();
   noecho();
   curs_set(0);
+  frame_count = 0;
 }
 
 void View::end(void) {
@@ -31,17 +31,17 @@ void View::end(void) {
 
 void View::newFrame(void) {
   refresh();
-  frameCount++;
+  ++frame_count;
 }
 
-int View::frameCount(void) {
-  return frameCount;
+uintmax_t View::frameCount(void) {
+  return frame_count.load();
 }
 
 void View::erase(int x, int y) {
   draw(x, y, ' ');
 }
 
-void View::draw(int x, int y, char ch) {
+void View::draw(int x, int y, chtype ch) {
   mvaddch(y, x, ch);
 }

@@ -7,17 +7,23 @@
 
 \******************************************************************************/
 
-#ifndef SNAKE_VIEW_H_
-#define SNAKE_VIEW_H_
+#ifndef VIEW_H_
+#define VIEW_H_
+
+extern "C" {
+#include <ncurses.h>
+}
+
+#include <cstdint>
 
 class View {
  public:
   static void init(void);
   static void end(void);
   static void newFrame(void);
-  static int frameCount(void);
+  static uintmax_t frameCount(void);
   static void erase(int x, int y);
-  static void draw(int x, int y, char ch);
+  static void draw(int x, int y, chtype ch);
 };
 
-#endif  // SNAKE_VIEW_H_
+#endif  // VIEW_H_
