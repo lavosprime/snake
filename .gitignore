@@ -30,5 +30,8 @@
 # Editor and temporary files
 *.swp
 
+# Downloaded and external files
+cpplint.py
+
 # Project-specific files
 snake
