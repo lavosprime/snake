@@ -18,8 +18,8 @@ VALIDATEFLAGS = -g -Og -Wsuggest-final-types -Wsuggest-final-methods \
 	-Wunused-macros -fsanitize=address,undefined -fno-omit-frame-pointer
 
 PROG = snake
-OBJS = main.o view.o
-HEADERS = view.h
+OBJS = main.o math_util.o view.o
+HEADERS = math_util.h view.h
 CPPLINT = http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py
 
 .PHONY: default release debug validate lint lint-headers clean
