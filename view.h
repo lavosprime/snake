@@ -1,11 +1,11 @@
-/*******************************************************************************
+/******************************************************************************\
 
-  Copyright (c) 2014 by Cooper Johnson <lavosprime@gmail.com>
+  Copyright (c) 2015 by Cooper Johnson <lavosprime@gmail.com>
   This program is free software provided under the terms of the MIT License.
 
-  View.h: Declarations of unctions for drawing the game.
+  view.h: Declarations of unctions for drawing the game.
 
-*******************************************************************************/
+\******************************************************************************/
 
 #ifndef SNAKE_VIEW_H_
 #define SNAKE_VIEW_H_
@@ -20,4 +20,4 @@ class View {
   static void draw(int x, int y, char ch);
 };
 
-#endif // SNAKE_VIEW_H_
+#endif  // SNAKE_VIEW_H_

@@ -1,18 +1,22 @@
-/*******************************************************************************
+/******************************************************************************\
 
-  Copyright (c) 2014 by Cooper Johnson <lavosprime@gmail.com>
+  Copyright (c) 2015 by Cooper Johnson <lavosprime@gmail.com>
   This program is free software provided under the terms of the MIT License.
 
-  View.cc: Functions for drawing the game.
+  view.cc: Functions for drawing the game.
 
-*******************************************************************************/
+\******************************************************************************/
 
 #include <cstdlib>
 #include <ncurses.h>
 
-#include "View.h"
+#include "view.h"
 
-static int frameCount = 0;
+namespace {
+
+int frameCount = 0;
+
+}
 
 void View::init(void) {
   initscr();
