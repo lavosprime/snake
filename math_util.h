@@ -7,8 +7,8 @@
 
 \******************************************************************************/
 
-#ifndef MATH_UTIL_H
-#define MATH_UTIL_H
+#ifndef MATH_UTIL_H_
+#define MATH_UTIL_H_
 
 // Return a random integer within the given (inclusive) range.
 int rand_int(int min, int max);
@@ -19,4 +19,4 @@ struct Coord {
   int y;
 };
 
-#endif  // MATH_UTIL_H
+#endif  // MATH_UTIL_H_
