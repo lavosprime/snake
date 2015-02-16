@@ -15,7 +15,7 @@ namespace {
 
 // Provides access to a default thread-local Mersenne Twister engine, seeded
 // from OS-level or hardware-level randomness if possible.
-auto& rand_engine(void) {
+auto& GetLocalRandomEngine(void) {
   thread_local static auto engine = std::mt19937{std::random_device{}()};
   return engine;
 }
@@ -23,7 +23,7 @@ auto& rand_engine(void) {
 }  // namespace
 
 int rand_int(int min, int max) {
-  return std::uniform_int_distribution<>{min, max}(rand_engine());
+  return std::uniform_int_distribution<>{min, max}(GetLocalRandomEngine());
 }
 
 bool operator==(const Coord& a, const Coord& b) {
