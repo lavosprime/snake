@@ -19,4 +19,6 @@ struct Coord {
   int y;
 };
 
+bool operator==(const Coord& a, const Coord& b);
+
 #endif  // MATH_UTIL_H_

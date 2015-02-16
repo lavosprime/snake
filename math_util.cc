@@ -25,3 +25,7 @@ auto& rand_engine(void) {
 int rand_int(int min, int max) {
   return std::uniform_int_distribution<>{min, max}(rand_engine());
 }
+
+bool operator==(const Coord& a, const Coord& b) {
+  return a.x == b.x && a.y == b.y;
+}
