@@ -10,20 +10,21 @@
 #ifndef SNAKE_H_
 #define SNAKE_H_
 
-#include "./math_util.h"
-
 #include <cstdint>
-#include <queue>
+#include <deque>
+
+#include "./math_util.h"
 
 class Snake{
  public:
   Snake();
+  bool Overlaps(const Coord& c) const;
  private:
   struct Segment {
-    Coord pos;
-    uintmax_t birth_frame;
+    const Coord pos;
+    const uintmax_t birth_frame;
   };
-  std::queue<Segment> body;
+  std::deque<Segment> body_;
 };
 
 #endif  // SNAKE_H_

@@ -9,7 +9,19 @@
 
 #include "./snake.h"
 
+#include <algorithm>
+#include <iterator>
+
+//*
+using std::any_of;
+// */
 Snake::Snake()
-  : body{}
+  : body_{}
 {
+}
+
+bool Snake::Overlaps(const Coord& c) const {
+  return any_of(body_.cbegin(), body_.cend(), [&c](const Segment& s) {
+      return s.pos == c;
+  });
 }
